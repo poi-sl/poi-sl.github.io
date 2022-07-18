@@ -1,0 +1,103 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+body {
+  background-color: #23272a;
+  color: white;
+}
+
+.content {
+  text-align: center;
+  padding: 12px;
+}
+
+.nodeco {
+  text-decoration: none;
+}
+
+.link {
+  color: darkgray;
+}
+
+.inv-text {
+  color: #23272a;
+}
+
+/* header */
+.header {
+  overflow: hidden;
+  background-image: url("https://cdn.discordapp.com/attachments/677012916527955968/677012967598063616/bg.jpg");
+  /*background-color: #2C2F33;*/
+  background-size: cover;
+  padding: 20px 10px;
+  font-family: Arial;
+}
+
+.header a {
+  font-size: 25px;
+  font-family: "Courier New";
+  color: white;
+  float: left;
+  text-align: center;
+  padding: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.header a.bold {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Courier New";
+  color: white;
+}
+
+.header a:hover {
+  background-color: #2c2f33;
+}
+
+.header a.active {
+  background-color: #7289da;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: #23272a;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox 
+body {
+  -ms-overflow-style: none;  /* IE and Edge 
+  scrollbar-width: none;  /* Firefox 
+}
+*/
