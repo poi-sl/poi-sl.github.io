@@ -1,2 +1,2 @@
-# ifp.github.io
+# poi-sl.github.io
 informal portfolio
