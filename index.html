@@ -1,17 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirect Hub</title>
-    <meta name="author" content="poi">
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/26704624?v=4">
-    <link href="/style.css" type="text/css" rel="stylesheet" />
-    <script src="/script.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <h1>Portfolios</h1>
-    <p>Formal</p>
-    <p><a href="informal/index.html">Informal</a></p>
-  </body>
+
+<html>
+
+<head>
+    <title>Portfolio</title>
+    <meta name="author" content="Samuel">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./img/icn.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden
+        }
+        
+        .wrapper_l {
+            position: fixed;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .wrapper_r {
+            position: fixed;
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .link_wrapper {
+            position: relative;
+        }
+        
+        a {
+            display: block;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            background: #333;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 3px solid #333;
+            transition: all .35s;
+        }
+        
+        .icon_l {
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            position: absolute;
+            transform: rotate(-135deg);
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: all .35s;
+        }
+        
+        .icon_l svg {
+            width: 30px;
+            position: absolute;
+            top: calc(50% - 15px);
+            left: calc(50% - 15px);
+            transform: rotate(-45deg);
+            fill: #7289da;
+            transition: all .35s;
+        }
+        
+        .icon_r {
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            position: absolute;
+            transform: rotate(45deg);
+            right: 0;
+            top: 0;
+            z-index: -1;
+            transition: all .35s;
+        }
+        
+        .icon_r svg {
+            width: 30px;
+            position: absolute;
+            top: calc(50% - 15px);
+            left: calc(50% - 15px);
+            transform: rotate(-45deg);
+            fill: #a31f34;
+            transition: all .35s;
+        }
+        
+        a:hover {
+            width: 200px;
+            border: 3px solid #ffffff;
+            background: transparent;
+        }
+        
+        a:hover+.icon_l {
+            border: 3px solid #ffffff;
+            left: -25%;
+        }
+        
+        a:hover+.icon_r {
+            border: 3px solid #ffffff;
+            right: -25%;
+        }
+        
+        #formal:hover {
+            color: #7289da;
+        }
+        
+        #informal:hover {
+            color: #a31f34;
+        }
+        
+        body {
+            background: rgb(163, 31, 52);
+            background: linear-gradient(90deg, rgba(163, 31, 52, 1) 0%, rgba(114, 137, 218, 1) 100%);
+        }
+    </style>
+    <script>
+        function ani(x, y) {
+            document.getElementById(x).className = y;
+            if (x == '');
+        }
+    </script>
+</head>
+<header>
+
+</header>
+
+<body>
+    <h1 style="color: #ffffff;text-align: center;">Portfolios</h1>
+    <div class="wrapper_l">
+        <div class="link_wrapper">
+            <a href="formal.html" id="formal">Formal</a>
+            <div class="icon_l">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+              <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+            </svg>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper_r">
+        <div class="link_wrapper">
+            <a href="informal.html" id="informal">Informal</a>
+            <div class="icon_r">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+              <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+            </svg>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+
+</footer>
+
 </html>

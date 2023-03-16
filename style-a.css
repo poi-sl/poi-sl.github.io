@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@900&display=swap');
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'M PLUS 1p', sans-serif;
+}
+
+.topNav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.topNav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topNav a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.topNav-r {
+    float: right;
+}
+
+#topNav {
+    display: none;
+}
