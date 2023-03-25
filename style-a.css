@@ -37,10 +37,16 @@ h6 {
     color: black;
 }
 
+.topNav-l {
+    float: left;
+}
+
 .topNav-r {
     float: right;
 }
 
+
+/*
 #topNav {
     display: none;
-}
+}/*/
