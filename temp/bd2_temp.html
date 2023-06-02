@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Glendale - Basic Design 2 temporary page</title>
+    <meta name="author" content="Samuel">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAG1BMVEUJVpUKV5YJVpUAT48AAAAJVpUHU5MIVZQJVpPVnSbVAAAACXRSTlOf/88QAL9Ar3A1kf9HAAAAnklEQVR4AaXQAQYDMRAF0B1ygP3RPcDKDSoHWDJaAL1Bqyt6/xM0mUlGuijVL/J5hshMBB+ZsJQT+YZ5AhAYkr12BR8bpAYICuHawSt46mD5CqQ1G2xazoBJBtiAZcQJrAJMdUDgrvAATgo7HWEbgbAwy1XYFeCWtOqzBmdInMGqsBig5TfgCzCPIP0BKefnCPkF+H+eta13sK0fv/8GpyFKADQCXEgAAAAASUVORK5CYII=">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    
+    body {
+        background-image: url('./imgs/bg.JPG');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    #lang-sel {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+    
+    #sel {
+        width: 312px;
+        padding: 10px;
+        margin-top: 20vh;
+        margin-left: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background-color: #ffffff;
+        /*tbd*/
+        border-color: red;
+        border-width: 5px;
+        border-style: solid;
+    }
+    
+    .lang-btn {
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #a31f34;
+        border: none;
+    }
+    
+    #lang {
+        top: 0;
+        right: 10px;
+        position: fixed;
+        cursor: pointer;
+        background-color: #420a15;
+        border: 0px;
+        color: #ffffff;
+        padding: 10px 10px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    
+    #header {
+        top: 0;
+        width: 100%;
+        height: fit-content;
+    }
+    
+    .section {
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 10px;
+        margin: auto;
+        max-width: 500px;
+        /*tbd*/
+        border-color: red;
+        border-width: 5px;
+        border-style: solid;
+    }
+    
+    hr {
+        border: 1px solid transparent;
+    }
+    
+    #topBtn {
+        display: none;
+        position: fixed;
+        cursor: pointer;
+        background-color: #420a15;
+        border: 0px;
+        color: #ffffff;
+        padding: 10px 10px;
+        border-radius: 10px 10px 0px 0px;
+        bottom: 0;
+        right: 10px;
+        z-index: 99;
+        --offset: 100px;
+        margin-top: calc(100vh + var(--offset));
+    }
+</style>
+<header>
+    <button id="lang" onclick="showlang(1)" lang="en">Menu</button>
+    <button id="lang" onclick="showlang(1)" lang="zh">目錄</button>
+</header>
+
+<body>
+    <div id="lang-sel">
+        <div id="sel">
+            <h3 style="text-align: center;">Select Language/選擇語言</h3>
+            <button class="lang-btn" id="en" onclick="showlang(0)">English</button>
+            <button class="lang-btn" id="zh" onclick="showlang(0)">中文</button>
+        </div>
+    </div>
+    <div class="section">
+        <div lang="en">
+            <h1 id="intro">Intro</h1>
+            <p>Glendale is a neighborhood in Queens, NYC.</p>
+            <div style="position:relative;">
+                <h3>Geodata</h3>
+                <p>State: New York<br>City: New York City<br>Borough: Queens<br>Community Board: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>Area: 2.78km^2</p>
+                <hr style="padding:25px;">
+                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;">
+                <img src="./imgs/weather.png" style="width:100%; height:auto;">
+                <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">*</span>NTA(Neighborhood Tabulation Area) is a unit created by NYC Department of City Planning, often used in census.</p>
+            </div>
+            <div>
+                <h3>Demographic</h3>
+                <p>Total Population: 35,576</p>
+                <img src="./imgs/gendernrace.png" style="width:100%; height:auto;">
+                <img src="./imgs/pop.png" style="width:100%; height:auto;">
+            </div>
+            <div>
+                <h3>Photos</h3>
+                <img src="./imgs/image-2.png" style="width:100%; height:auto;">
+                <p>Some resident building(condo).</p>
+                <img src="./imgs/image-1.png" style="width:100%; height:auto;">
+                <p>Myrtle Avenue, where the stores at.</p>
+                <img src="./imgs/image.png" style="width:100%; height:auto;">
+                <p>An usual sidewalk in Glendale.</p>
+            </div>
+        </div>
+        <div lang="en">
+            <h1 id="monotype">Monotype</h1>
+            <h3>1/500&#8593</h3>
+            <img src="./imgs/mono5.png" style="width:100%; height:auto;">
+            <p>From this one you can see there are many kinds of building.</p>
+            <hr style="padding:5px;">
+            <h3>1/2000&#8593</h3>
+            <img src="./imgs/mono20.png" style="width:100%; height:auto;">
+            <p>Differences between building became more obvious in this one.</p>
+            <hr style="padding:5px;">
+            <h3>1/10000&#8593</h3>
+            <img src="./imgs/mono100.png" style="width:100%; height:auto;">
+            <p>There are plenty of empty spaces even between buildings.</p>
+        </div>
+        <div lang="zh">
+            <h1 id="intro">基本資訊</h1>
+            <p>Glendale是一個在紐約市皇后區的鄰里社區。</p>
+            <div style="position:relative;">
+                <h3>地理資訊</h3>
+                <p>州: 紐約<br>市: 紐約市<br>區: 皇后區<br>社區<span style="font-size:14px;color:#e4002b;">**</span>: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>面積: 2.78km^2</p>
+                <hr style="padding:5px;">
+                <p>氣候|<span style="color:#5FCFDD;">&#9608;</span>月均降雨 <span style="color:#E63E32;">&#9608;</span>月均溫</p>
+                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;">
+                <img src="./imgs/weather.png" style="width:100%; height:auto;">
+                <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">*</span>NTA(Neighborhood Tabulation Area)是一個由紐約市都市規劃局所創立的單位，常用在人口統計中。</p>
+                <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">**</span>此社區指的是Community Board。</p>
+            </div>
+            <div>
+                <h3>人口統計</h3>
+                <p>總人口: 35,576</p>
+                <p>性別|<span style="color:#5FCFDD;">&#9608;</span>男性 <span style="color:#E63E32;">&#9608;</span>女性<br>人種|<span style="color:#FCF0CA;">&#9608;</span>高加索人 <span style="color:#F4B183;">&#9608;</span>拉丁裔 <span style="color:#FBD866;">&#9608;</span>亞裔
+                    <span style="color:#3B3838;">&#9608;</span>非裔 <span style="color:#A9D18E;">&#9608;</span>其他</p>
+                <img src="./imgs/gendernrace.png" style="width:100%; height:auto;">
+                <img src="./imgs/pop.png" style="width:100%; height:auto;">
+            </div>
+            <div>
+                <h3>照片</h3>
+                <img src="./imgs/image-2.png" style="width:100%; height:auto;">
+                <p>一些住宅(公寓)。</p>
+                <img src="./imgs/image-1.png" style="width:100%; height:auto;">
+                <p>Myrtle Avenue，店舖所在的街。</p>
+                <img src="./imgs/image.png" style="width:100%; height:auto;">
+                <p>在Glendale常見的人行道。</p>
+            </div>
+        </div>
+        <div lang="zh">
+            <h1 id="monotype">拓印</h1>
+            <h3>1/500&#8593</h3>
+            <img src="./imgs/mono5.png" style="width:100%; height:auto;">
+            <p>有許多類型的建物。</p>
+            <hr style="padding:5px;">
+            <h3>1/2000&#8593</h3>
+            <img src="./imgs/mono20.png" style="width:100%; height:auto;">
+            <p>建物類別在這張更佳的明顯。</p>
+            <hr style="padding:5px;">
+            <h3>1/10000&#8593</h3>
+            <img src="./imgs/mono100.png" style="width:100%; height:auto;">
+            <p>在建物之間仍有許多空地。</p>
+        </div>
+    </div>
+    <div class="section">
+        <div lang="en">
+            <div>
+                <h1>Monotype & Basic Analysis</h1>
+                <h3>Road System&#8593</h3>
+                <p><span style="color:#383B82;">&#9608;</span>Main Roads <span style="color:#58BBB8;">&#9608;</span>Normal Roads<br><span style="color:#EB5D33;">&#9608;</span>M Train <span style="color:#E94444;">&#9608;</span>Fresh Pond Rd. Station</p>
+                <img src="./imgs/road.png" style="width:100%; height:auto;">
+                <hr style="padding:5px;">
+                <h3>Land Use&#8593</h3>
+                <p><span style="color:#E4E67B;">&#9608;</span>Resident Zone <span style="color:#D1A269;">&#9608;</span>Resident&Commercial Mixed<br><span style="color:#D56768;">&#9608;</span>Commercial Zone <span style="color:#AD6DAD;">&#9608;</span>Industrial
+                    Zone <span style="color:#71C16D;">&#9608;</span>Parks</p>
+                <img src="./imgs/landuse.png" style="width:100%; height:auto;">
+                <hr style="padding:5px;">
+                <h3>Buildings(Resident)&#8593</h3>
+                <p><span style="color:#EFBA31;">&#9608;</span>Single&Dual Building <span style="color:#EC6233;">&#9608;</span>Condo <span style="color:#59C4D3;">&#9608;</span>Others</p>
+                <img src="./imgs/building.png" style="width:100%; height:auto;">
+                <hr style="padding:5px;">
+                <h3>Open Space&#8593</h3>
+                <p><span style="color:#5F74B8;">&#9608;</span>Railroad <span style="color:#A66EAE;">&#9608;</span>Public<br><span style="color:#89C97E;">&#9608;</span>Cemetry <span style="color:#4B9546;">&#9608;</span>Private</p>
+                <img src="./imgs/greeneries.png" style="width:100%; height:auto;">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div lang="en">
+            <h3>About this site</h3>
+            <p>This site is created by Samuel Lin. It's just a temporary site designated for Basic Design 2.</p>
+            <p>Data sources: NYC OpenData, NYC ZoLa, NOAA National Centers for Environmental Information, DOI U.S. Geological Survey, Google Street View</p>
+            <p style="text-align: center;">© Samuel Lin, 2023</p>
+        </div>
+        <div lang="zh">
+            <h3>關於此網站</h3>
+            <p>此網站是一個為了基本設計(二)所做的暫時性網站，並由林晟製作。</p>
+            <p>資料來源: NYC OpenData, NYC ZoLa, NOAA National Centers for Environmental Information, DOI U.S. Geological Survey, Google Street View</p>
+            <p style="text-align: center;">© Samuel Lin, 2023</p>
+        </div>
+    </div>
+</body>
+<footer>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+</footer>
+<script>
+    window.onbeforeunload = function() {
+        window.scrollTo(0, 0);
+    }
+
+    function showlang(i) {
+        if (i == 0) {
+            document.getElementById("lang-sel").style.display = "none";
+        }
+        if (i == 1) {
+            document.getElementById("lang-sel").style.display = "block";
+        }
+    }
+    $('[lang="zh"]').hide();
+    $('#en').click(function() {
+        $('[lang="en"]').show()
+        $('[lang="zh"]').hide()
+    });
+    $('#zh').click(function() {
+        $('[lang="zh"]').show()
+        $('[lang="en"]').hide()
+    });
+    // topBtn 
+    let mybutton = document.getElementById("topBtn");
+
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 100) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        /*
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        */
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</html>
