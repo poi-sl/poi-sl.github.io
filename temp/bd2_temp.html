@@ -22,6 +22,11 @@
         font-family: 'Noto Sans', sans-serif;
     }
     
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    
     body {
         background-image: url('./imgs/bg.JPG');
         background-repeat: no-repeat;
@@ -40,7 +45,7 @@
         background-color: rgba(0, 0, 0, 0.3)
     }
     
-    #sel {
+    #sel-l {
         width: 312px;
         padding: 10px;
         margin-top: 20vh;
@@ -48,10 +53,6 @@
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         background-color: #ffffff;
-        /*tbd*/
-        border-color: red;
-        border-width: 5px;
-        border-style: solid;
     }
     
     .lang-btn {
@@ -68,7 +69,7 @@
         border: none;
     }
     
-    #lang {
+    #menu-o {
         top: 0;
         right: 10px;
         position: fixed;
@@ -78,6 +79,42 @@
         color: #ffffff;
         padding: 10px 10px;
         border-radius: 0px 0px 10px 10px;
+    }
+    
+    #menu-c {
+        top: 0;
+        right: 10px;
+        position: fixed;
+        cursor: pointer;
+        background-color: #420a15;
+        border: 0px;
+        color: #ffffff;
+        padding: 10px 10px;
+        border-radius: 0px 0px 10px 10px;
+        z-index: 99;
+    }
+    
+    #menu-sel {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 97;
+    }
+    
+    #sel-m {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 312px;
+        padding: 10px;
+        background-color: #a31f34;
+        z-index: 98;
+        border-radius: 0px 0px 0px 15px;
     }
     
     #header {
@@ -91,10 +128,6 @@
         padding: 10px;
         margin: auto;
         max-width: 500px;
-        /*tbd*/
-        border-color: red;
-        border-width: 5px;
-        border-style: solid;
     }
     
     hr {
@@ -118,16 +151,40 @@
     }
 </style>
 <header>
-    <button id="lang" onclick="showlang(1)" lang="en">Menu</button>
-    <button id="lang" onclick="showlang(1)" lang="zh">目錄</button>
+    <button id="menu-o" onclick="showmenu(1)" lang="en">Menu</button>
+    <button id="menu-o" onclick="showmenu(1)" lang="zh">目錄</button>
 </header>
 
 <body>
     <div id="lang-sel">
-        <div id="sel">
+        <div id="sel-l">
             <h3 style="text-align: center;">Select Language/選擇語言</h3>
             <button class="lang-btn" id="en" onclick="showlang(0)">English</button>
             <button class="lang-btn" id="zh" onclick="showlang(0)">中文</button>
+        </div>
+    </div>
+    <div id="menu-sel" onclick="showmenu(0)">
+        <button id="menu-c" onclick="showmenu(0)" lang="en" style="z-index:99;">Close</button>
+        <button id="menu-c" onclick="showmenu(0)" lang="zh" style="z-index:99;">關閉目錄</button>
+        <div id="sel-m">
+            <div lang="en">
+                <a href="#intro" onclick="showmenu(0)">
+                    <h2>Intro</h2>
+                </a>
+                <a href="#monotype" onclick="showmenu(0)">
+                    <h2>Monotype</h2>
+                </a>
+                <a href="#mono_analysis" onclick="showmenu(0)">
+                    <h2>Monotype & Analysis</h2>
+                </a>
+                <a href="#abt" onclick="showmenu(0)">
+                    <h2>About this site</h2>
+                </a>
+                <hr style="padding:50px;">
+                <a onclick="showmenu(0); showlang(1)">
+                    <h2>Change Language</h2>
+                </a>
+            </div>
         </div>
     </div>
     <div class="section">
@@ -221,7 +278,7 @@
     <div class="section">
         <div lang="en">
             <div>
-                <h1>Monotype & Basic Analysis</h1>
+                <h1 id="mono_analysis">Monotype & Basic Analysis</h1>
                 <h3>Road System&#8593</h3>
                 <p><span style="color:#383B82;">&#9608;</span>Main Roads <span style="color:#58BBB8;">&#9608;</span>Normal Roads<br><span style="color:#EB5D33;">&#9608;</span>M Train <span style="color:#E94444;">&#9608;</span>Fresh Pond Rd. Station</p>
                 <img src="./imgs/road.png" style="width:100%; height:auto;">
@@ -243,13 +300,13 @@
     </div>
     <div class="section">
         <div lang="en">
-            <h3>About this site</h3>
+            <h3 id="abt">About this site</h3>
             <p>This site is created by Samuel Lin. It's just a temporary site designated for Basic Design 2.</p>
             <p>Data sources: NYC OpenData, NYC ZoLa, NOAA National Centers for Environmental Information, DOI U.S. Geological Survey, Google Street View</p>
             <p style="text-align: center;">© Samuel Lin, 2023</p>
         </div>
         <div lang="zh">
-            <h3>關於此網站</h3>
+            <h3 id="abt">關於此網站</h3>
             <p>此網站是一個為了基本設計(二)所做的暫時性網站，並由林晟製作。</p>
             <p>資料來源: NYC OpenData, NYC ZoLa, NOAA National Centers for Environmental Information, DOI U.S. Geological Survey, Google Street View</p>
             <p style="text-align: center;">© Samuel Lin, 2023</p>
@@ -270,6 +327,15 @@
         }
         if (i == 1) {
             document.getElementById("lang-sel").style.display = "block";
+        }
+    }
+
+    function showmenu(i) {
+        if (i == 0) {
+            document.getElementById("menu-sel").style.display = "none";
+        }
+        if (i == 1) {
+            document.getElementById("menu-sel").style.display = "block";
         }
     }
     $('[lang="zh"]').hide();
