@@ -174,8 +174,8 @@
                 <a href="#monotype" onclick="showmenu(0)">
                     <h2>Monotype</h2>
                 </a>
-                <a href="#mono_analysis" onclick="showmenu(0)">
-                    <h2>Monotype & Analysis</h2>
+                <a href="#b_analysis" onclick="showmenu(0)">
+                    <h2>Basic Analysis</h2>
                 </a>
                 <a href="#abt" onclick="showmenu(0)">
                     <h2>About this site</h2>
@@ -192,8 +192,8 @@
                 <a href="#z-monotype" onclick="showmenu(0)">
                     <h2>拓印</h2>
                 </a>
-                <a href="#z-mono_analysis" onclick="showmenu(0)">
-                    <h2>拓印 & 分析</h2>
+                <a href="#z-b_analysis" onclick="showmenu(0)">
+                    <h2>基本分析</h2>
                 </a>
                 <a href="#z-abt" onclick="showmenu(0)">
                     <h2>關於此網站</h2>
@@ -206,14 +206,15 @@
         </div>
     </div>
     <div class="section">
+        <img src="./imgs/title.png" style="position:relative;top:0;left:0;width:100%;height:auto;">
         <div lang="en">
             <h1 id="intro">Intro</h1>
             <p>Glendale is a neighborhood in Queens, NYC.</p>
             <div style="position:relative;">
                 <h3>Geodata</h3>
-                <p>State: New York<br>City: New York City<br>Borough: Queens<br>Community Board: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>Area: 2.78km^2</p>
+                <p style="z-index:2;">State: New York<br>City: New York City<br>Borough: Queens<br>Community Board: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>Area: 2.78km^2</p>
                 <hr style="padding:25px;">
-                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;">
+                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;z-index:1;">
                 <img src="./imgs/weather.png" style="width:100%; height:auto;">
                 <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">*</span>NTA(Neighborhood Tabulation Area) is a unit created by NYC Department of City Planning, often used in census.</p>
             </div>
@@ -235,6 +236,7 @@
         </div>
         <div lang="en">
             <h1 id="monotype">Monotype</h1>
+            <p>Scale may vary due to different screen size, named scale is based on original monotype(20cm x 20cm).</p>
             <h3>1/500&#8593</h3>
             <img src="./imgs/mono5.png" style="width:100%; height:auto;">
             <p>From this one you can see there are many kinds of building.</p>
@@ -252,10 +254,10 @@
             <p>Glendale是一個在紐約市皇后區的鄰里社區。</p>
             <div style="position:relative;">
                 <h3>地理資訊</h3>
-                <p>州: 紐約<br>市: 紐約市<br>區: 皇后區<br>社區<span style="font-size:14px;color:#e4002b;">**</span>: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>面積: 2.78km^2</p>
-                <hr style="padding:5px;">
+                <p style="z-index:2;">州: 紐約<br>市: 紐約市<br>區: 皇后區<br>社區<span style="font-size:14px;color:#e4002b;">**</span>: 5<br>NTA<span style="font-size:14px;color:#e4002b;">*</span>: QN19<br>面積: 2.78km^2</p>
+                <hr style="padding:10px;">
                 <p>氣候|<span style="color:#5FCFDD;">&#9608;</span>月均降雨 <span style="color:#E63E32;">&#9608;</span>月均溫</p>
-                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;">
+                <img src="./imgs/ntas_crop.png" style="position:absolute;top:0;right:0;height:auto;width:250px;z-index:1;">
                 <img src="./imgs/weather.png" style="width:100%; height:auto;">
                 <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">*</span>NTA(Neighborhood Tabulation Area)是一個由紐約市都市規劃局所創立的單位，常用在人口統計中。</p>
                 <p style="font-size:14px"><span style="font-size:14px;color:#e4002b;">**</span>此社區指的是Community Board。</p>
@@ -280,13 +282,14 @@
         </div>
         <div lang="zh">
             <h1 id="z-monotype">拓印</h1>
+            <p>實際比例依螢幕大小而定，此比例僅為原圖比例(20cm x 20cm)。</p>
             <h3>1/500&#8593</h3>
             <img src="./imgs/mono5.png" style="width:100%; height:auto;">
             <p>有許多類型的建物。</p>
             <hr style="padding:5px;">
             <h3>1/2000&#8593</h3>
             <img src="./imgs/mono20.png" style="width:100%; height:auto;">
-            <p>建物類別在這張更佳的明顯。</p>
+            <p>建物類別在這張更加的明顯。</p>
             <hr style="padding:5px;">
             <h3>1/10000&#8593</h3>
             <img src="./imgs/mono100.png" style="width:100%; height:auto;">
@@ -296,7 +299,7 @@
     <div class="section">
         <div lang="en">
             <div>
-                <h1 id="mono_analysis">Monotype & Basic Analysis</h1>
+                <h1 id="b_analysis">Basic Analysis</h1>
                 <h3>Road System&#8593</h3>
                 <p><span style="color:#383B82;">&#9608;</span>Main Roads <span style="color:#58BBB8;">&#9608;</span>Normal Roads<br><span style="color:#EB5D33;">&#9608;</span>M Train <span style="color:#E94444;">&#9608;</span>Fresh Pond Rd. Station</p>
                 <img src="./imgs/road.png" style="width:100%; height:auto;">
@@ -317,7 +320,7 @@
         </div>
         <div lang="zh">
             <div>
-                <h1 id="z-mono_analysis">拓印 & 基本分析</h1>
+                <h1 id="z-b_analysis">基本分析</h1>
                 <h3>道路系統&#8593</h3>
                 <p><span style="color:#383B82;">&#9608;</span>主要幹道 <span style="color:#58BBB8;">&#9608;</span>一般道路<br><span style="color:#EB5D33;">&#9608;</span>地鐵(M) <span style="color:#E94444;">&#9608;</span>地鐵站(Fresh Pond Rd.)</p>
                 <img src="./imgs/road.png" style="width:100%; height:auto;">
@@ -345,7 +348,7 @@
         </div>
         <div lang="zh">
             <h3 id="z-abt">關於此網站</h3>
-            <p>此網站是一個為了基本設計(二)所做的暫時性網站，並由林晟製作。</p>
+            <p>此網站是林晟為了基本設計(二)所做的暫時性網站。</p>
             <p>資料來源: NYC OpenData, NYC ZoLa, NOAA National Centers for Environmental Information, DOI U.S. Geological Survey, Google Street View</p>
             <p style="text-align: center;">© Samuel Lin, 2023</p>
         </div>
